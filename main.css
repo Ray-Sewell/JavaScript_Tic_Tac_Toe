@@ -20,7 +20,7 @@ main {
     height: 50vh;
 }
 #message {
-    
+
 }
 #board {
     display: grid;
@@ -30,6 +30,11 @@ main {
 .space {
     height: 100px;
     width: 100px;
-    background-color: tomato;
+    background-color:lightgrey;
     cursor: pointer;
+    text-align: center;
+    font-size: 5.2em;
+    font-weight: 700;
+    color: white;
+    box-shadow: 1px 0 5px 0 rgba(0, 0, 0, .2);
 }
