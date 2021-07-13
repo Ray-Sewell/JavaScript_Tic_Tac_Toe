@@ -12,3 +12,24 @@ nav {
 #nav-center {
     padding: 10px;
 }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+#message {
+    
+}
+#board {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(3, 100px);
+}
+.space {
+    height: 100px;
+    width: 100px;
+    background-color: tomato;
+    cursor: pointer;
+}
