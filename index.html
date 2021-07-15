@@ -13,9 +13,24 @@
         </div>
     </nav>
     <main>
-        <button onclick="startNewGame()">Start Game</button>
-        <input id="player1" type="text" value="Player 1">
-        <input id="player2" type="text" value="Player 2">
+        <div id="player-containers">
+            <div class="player-container" id="player1-container">
+                <div style="display: flex;">
+                    <h2>Player 1 -</h2>
+                    <h2 id="player1-counter" class="counter">0</h2>
+                </div>
+                <input id="player1" type="text" value="Player 1">
+            </div>
+            <div class="player-container" id="player2-container">
+                <div style="display: flex;">
+                    <h2>Player 2 -</h2>
+                    <h2 id="player2-counter" class="counter">0</h2>
+                </div>
+                <input id="player2" type="text" value="Player 2">
+            </div>
+        </div>
+        
+        <button onclick="startNewGame()">Restart Game</button>
         <h3 id="message"></h3>
         <div id="board">
         </div>

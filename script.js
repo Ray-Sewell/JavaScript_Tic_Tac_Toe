@@ -2,6 +2,8 @@ const boardGrid = document.querySelector("#board");
 const message = document.querySelector("#message");
 const player1Name = document.querySelector("#player1");
 const player2Name = document.querySelector("#player2");
+const player1Counter = document.querySelector("#player1-counter");
+const player2Counter = document.querySelector("#player2-counter");
 const winningPositions = [
     [0,1,2],
     [3,4,5],
@@ -45,11 +47,11 @@ class Game {
                 switch(this.gameState) {
                     case "p1":
                         space.innerHTML = this.player1.symbol;
-                        space.style.backgroundColor = "darkturquoise";
+                        space.style.backgroundColor = "#7B9E89";
                         break;
                     case "p2":
                         space.innerHTML = this.player2.symbol;
-                        space.style.backgroundColor = "tomato";
+                        space.style.backgroundColor = "#D95D39";
                         break;
                     default:
                         message.innerHTML = "The game is already over!";
@@ -70,7 +72,7 @@ class Game {
                 this.refreshBoard();
                 this.applyOnClickToSpaces();
                 this.gameState = "p1";
-                message.innerHTML = "Welcome to tic tac toe! Player 1's turn!";
+                message.innerHTML = "Welcome to tic tac toe! " + player1.name + "'s turn!";
                 break;
             case "p1":
                 this.gameState = "p2";
@@ -93,9 +95,11 @@ class Game {
             if (transcribe.toString() == "X,X,X") {
                 this.gameState = "end";
                 message.innerHTML = "Game over! " + player1.name + " wins!";
+                player1Counter.innerHTML = parseInt(player1Counter.innerHTML) + 1; 
             } else if (transcribe.toString() == "O,O,O"){
                 this.gameState = "end";
                 message.innerHTML = "Game over! " + player2.name + " wins!";
+                player2Counter.innerHTML = parseInt(player2Counter.innerHTML) + 1; 
             }
             transcribe = [];
         });
@@ -123,3 +127,5 @@ function startNewGame() {
     game = new Game(player1, player2);
     game.checkGameState();
 }
+
+startNewGame();
